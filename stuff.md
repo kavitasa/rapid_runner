@@ -1,3 +1,10 @@
+TOMORROW
+  create tables
+  put stuff in database
+  start view
+  google map
+  google direction
+
 simplecov
 codeclimate
 
