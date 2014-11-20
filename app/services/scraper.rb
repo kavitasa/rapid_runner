@@ -4,17 +4,25 @@ require 'open-uri'
 class Scraper
 
   def initialize
-    ["WA", "CO"].each do |state_abbr|
-      scrape_rivers(state_abbr)
+    ["CA", "CO"].each do |state_abbr|
+      rivers = scrape_rivers(state_abbr)
+      add_to_database(rivers)
     end
   end
 
+  def scrape_rivers(state)
+    scraper = WebBasedRiverScraper.new(state)
+  end
+
   def scrape_rivers(state_abbr)
-    state_abbr = state_abbr.upcase[0..1]
+    # state_abbr = state_abbr.upcase[0..1]
     url = "http://www.americanwhitewater.org"
     state_url = "/content/River/state-summary/state/" + state_abbr
-    washington_rivers = Nokogiri::HTML(open(url + state_url))
+    washington_rivers = HTMLRiverParser.new(Nokogiri::HTML(open(url + state_url)))
+    parse_river_section(section_details)
     washington_rivers.css("tr.low").each do |river_section|
+      river = River.new(:name => river_section.river_name)
+      river.sections << Section.new(:name => river.section.section_name)
       river_name = river_section.children[3].text.split("\n")[1].strip
       next unless river_name
       # puts ">>>#{river_name}<<<"
@@ -37,8 +45,28 @@ class Scraper
 
   end
 
-  def add_to_database
+  def parse_river_section(section_details)
 
+  end
+
+  def add_to_database(rivers)
+    rivers.map(&:name).save!
+  end
+end
+
+class State
+  def to_s
+    abbr.upcase
+  end
+end
+
+class HTMLRiverParser
+  def initialize(data_source)
+    @data_source = data_source
+  end
+
+  def method_missing(*args, &block)
+    @data_source.send(*args, &block)
   end
 end
 
