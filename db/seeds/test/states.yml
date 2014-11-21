@@ -1,0 +1,8 @@
+records:
+
+  - spring_id: 1
+    name: "California"
+    abbr: "CA"
+  - spring_id: 2
+    name: "Colorado"
+    abbr: "CO"

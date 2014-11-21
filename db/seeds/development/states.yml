@@ -1,0 +1,157 @@
+records:
+  - spring_id: 1
+    name: "Alabama"
+    abbr: "AL"
+  - spring_id: 2
+    name: "Alaska"
+    abbr: "AK"
+  - spring_id: 3
+    name: "Arizona"
+    abbr: "AZ"
+  - spring_id: 4
+    name: "Arkansas"
+    abbr: "AR"
+  - spring_id: 5
+    name: "California"
+    abbr: "CA"
+  - spring_id: 6
+    name: "Colorado"
+    abbr: "CO"
+  - spring_id: 7
+    name: "Connecticut"
+    abbr: "CT"
+  - spring_id: 8
+    name: "Delaware"
+    abbr: "DE"
+  - spring_id: 9
+    name: "District of Columbia"
+    abbr: "DC"
+  - spring_id: 10
+    name: "Florida"
+    abbr: "FL"
+  - spring_id: 11
+    name: "Georgia"
+    abbr: "GA"
+  - spring_id: 12
+    name: "Hawaii"
+    abbr: "HI"
+  - spring_id: 13
+    name: "Idaho"
+    abbr: "ID"
+  - spring_id: 14
+    name: "Illinois"
+    abbr: "IL"
+  - spring_id: 15
+    name: "Indiana"
+    abbr: ""
+  - spring_id: 16
+    name: "Iowa"
+    abbr: "IA"
+  - spring_id: 17
+    name: "Kansas"
+    abbr: KS
+  - spring_id: 18
+    name: "Kentucky"
+    abbr: "KY"
+  - spring_id: 19
+    name: "Louisiana"
+    abbr: "LA"
+  - spring_id: 20
+    name: "Maine"
+    abbr: "ME"
+  - spring_id: 21
+    name: "Maryland"
+    abbr: "MD"
+  - spring_id: 22
+    name: "Massachusetts"
+    abbr: "MA"
+  - spring_id: 23
+    name: "Michigan"
+    abbr: "MI"
+  - spring_id: 24
+    name: "Minnesota"
+    abbr: "MN"
+  - spring_id: 25
+    name: "Mississippi"
+    abbr: "MS"
+  - spring_id: 26
+    name: "Missouri"
+    abbr: "MO"
+  - spring_id: 27
+    name: "Montana"
+    abbr: "MT"
+  - spring_id: 28
+    name: "Nebraska"
+    abbr: "NE"
+  - spring_id: 29
+    name: "Nevada"
+    abbr: "NV"
+  - spring_id: 30
+    name: "New Hampshire"
+    abbr: "NH"
+  - spring_id: 31
+    name: "New Jersey"
+    abbr: "NJ"
+  - spring_id: 32
+    name: "New Mexico"
+    abbr: "NM"
+  - spring_id: 33
+    name: "New York"
+    abbr: "NY"
+  - spring_id: 34
+    name: "North Carolina"
+    abbr: "NC"
+  - spring_id: 35
+    name: "North Dakota"
+    abbr: "ND"
+  - spring_id: 36
+    name: "Ohio"
+    abbr: "OH"
+  - spring_id: 37
+    name: "Oklahoma"
+    abbr: "OK"
+  - spring_id: 38
+    name: "Oregon"
+    abbr: "OR"
+  - spring_id: 39
+    name: "Pennsylvania"
+    abbr: "PA"
+  - spring_id: 40
+    name: "Puerto Rico"
+    abbr: "PR"
+  - spring_id: 41
+    name: "Rhode Island"
+    abbr: "RI"
+  - spring_id: 42
+    name: "South Carolina"
+    abbr: "SC"
+  - spring_id: 43
+    name: "South Dakota"
+    abbr: "SD"
+  - spring_id: 44
+    name: "Tennessee"
+    abbr: "TN"
+  - spring_id: 45
+    name: "Texas"
+    abbr: "TX"
+  - spring_id: 46
+    name: "Utah"
+    abbr: "UT"
+  - spring_id: 47
+    name: "Vermont"
+    abbr: "VT"
+  - spring_id: 48
+    name: "Virginia"
+    abbr: "VA"
+  - spring_id: 49
+    name: "Washington"
+    abbr: "WA"
+  - spring_id: 50
+    name: "West Virginia"
+    abbr: "WV"
+  - spring_id: 51
+    name: "Wisconsin"
+    abbr: "WI"
+  - spring_id: 52
+    name: "Wyoming"
+    abbr: "WY"
