@@ -9,7 +9,7 @@ class Scraper
       # add_to_database(rivers)
     end
   end
-  # run Scraper.new in rails c
+  # run Scraper.new in rails c since method in initializer
 
   # def scrape_rivers(state)
   #   scraper = WebBasedRiverScraper.new(state)
@@ -18,13 +18,12 @@ class Scraper
   def scrape_rivers(state_abbr)
     @url = "http://www.americanwhitewater.org"
     state_url = "/content/River/state-summary/state/" + state_abbr
-    washington_rivers = HTMLRiverParser.new(Nokogiri::HTML(open(@url + state_url)))
+    washington_rivers = HTMLRiverParser.new(Nokogiri::HTML(open(@url + state_url), user_agent: random_ua()))
     # washington_rivers = Nokogiri::HTML(open(url + state_url))
     section_details = washington_rivers.css("tr.low")
     parse_river_section(section_details)
-    end
-
   end
+
 
   def parse_river_section(section_details)
     results = {:section => []}
@@ -55,20 +54,22 @@ class Scraper
         # length
         # gradient
       rescue
-    end
+      end
 
-    results[:section] << {
-      river_name: river_name,
-      section_name: section_name,
-      water_class: water_class,
-      takeout_long: takeout_long,
-      takeout_lat: takeout_lat,
-      putin_long: putin_long,
-      putin_lat: putin_lat
-    }
+      begin
+        results[:section] << {
+          river_name: river_name,
+          section_name: section_name,
+          water_class: water_class,
+          takeout_long: takeout_long,
+          takeout_lat: takeout_lat,
+          putin_long: putin_long,
+          putin_lat: putin_lat
+        }
 
-    rescue
-      puts "Failed to fully load #{i} river #{river_name}, section #{section_name}"
+      rescue
+        puts "Failed to fully load #{i} river #{@river_name}, section #{section_name}"
+      end
     end
 
     results

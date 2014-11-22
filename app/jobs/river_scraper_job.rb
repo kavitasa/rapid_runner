@@ -2,7 +2,7 @@
   @queue = :scraper
 
   def self.perform #pass in state as argument when multiples
-    Scraper.new.scrape_rivers("WA")
+    Scraper.new
   end
 end
 
