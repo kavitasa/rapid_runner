@@ -1,7 +1,5 @@
 class River < ActiveRecord::Base
-
-  has_many :river_states
-  has_many :states, through: :river_states
+  has_and_belongs_to_many :states
   has_many :sections
 
   validates :name, presence: true

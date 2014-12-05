@@ -1,7 +1,9 @@
 require 'mechanize'
 require 'open-uri'
+require 'json'
 
 class Scraper
+  BASE_URL = "http://riverrat.herokuapp.com/"
 
   def initialize
     ["CA", "CO"].each do |state_abbr|
@@ -16,8 +18,16 @@ class Scraper
   # end
 
   def scrape_rivers(state_abbr)
-    @url = "http://www.americanwhitewater.org"
-    state_url = "/content/River/state-summary/state/" + state_abbr
+    endpoint = "api/v1/rivers"
+    url = BASE_URL + endpoint
+    raw_data = open(url).read
+    data = JSON.parse(raw_data)
+
+    data.map do |item|
+      relevant_thing = item["some_key"]
+      MyModel.create!(relevant_thing)
+    end
+
     washington_rivers = HTMLRiverParser.new(Nokogiri::HTML(open(@url + state_url), user_agent: random_ua()))
     # washington_rivers = Nokogiri::HTML(open(url + state_url))
     section_details = washington_rivers.css("tr.low")

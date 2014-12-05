@@ -7,6 +7,7 @@ TOMORROW
 
 simplecov
 codeclimate
+TravisCI
 
 twilio for text
 sendgrid for email
@@ -22,7 +23,7 @@ cron job
 rest client - simple DSL for accessing HTTP and REST resources
 
 
-redis
+*** redis ***
 miniprofile
 skylight
   why app is slow, tells how your app is spending its time in prod
